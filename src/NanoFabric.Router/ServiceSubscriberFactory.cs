@@ -4,6 +4,9 @@ using NanoFabric.Router.Throttle;
 
 namespace NanoFabric.Router
 {
+    /// <summary>
+    /// 服务订阅工厂类
+    /// </summary>
     public class ServiceSubscriberFactory : IServiceSubscriberFactory
     {
         private readonly IConsulServiceSubscriberFactory _consulServiceSubscriberFactory;

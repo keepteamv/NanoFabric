@@ -9,6 +9,11 @@ namespace NanoFabric.MqMessages
 {
     public static class ServiceCollectionExtensions
     {
+        /// <summary>
+        /// 添加消息列表服务支持
+        /// </summary>
+        /// <param name="services"></param>
+        /// <returns></returns>
         public static IServiceCollection AddMqMessages(this IServiceCollection services 
            )
         {

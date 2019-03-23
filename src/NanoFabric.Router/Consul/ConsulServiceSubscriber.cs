@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace NanoFabric.Router.Consul
 {
+    /// <summary>
+    /// Consul 服务订阅实现
+    /// </summary>
     public class ConsulServiceSubscriber : IServiceSubscriber
     {
         private readonly IConsulClient _client;

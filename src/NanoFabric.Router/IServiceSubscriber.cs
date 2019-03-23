@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace NanoFabric.Router
 {
+    /// <summary>
+    /// 服务订阅接口
+    /// </summary>
     public  interface IServiceSubscriber : IDisposable
     {
         Task<List<RegistryInformation>> Endpoints(CancellationToken ct = default(CancellationToken));

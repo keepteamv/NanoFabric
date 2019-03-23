@@ -43,7 +43,7 @@ namespace NanoFabric.Core
 
         public static bool IsNullOrWhitespace(this string s)
         {
-            return String.IsNullOrWhiteSpace(s);
+            return string.IsNullOrWhiteSpace(s);
         }
 
     }

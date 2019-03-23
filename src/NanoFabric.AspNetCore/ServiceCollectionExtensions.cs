@@ -18,6 +18,12 @@ namespace NanoFabric.AspNetCore
 {
     public static class ServiceCollectionExtensions
     {
+        /// <summary>
+        /// 添加自定义Identity
+        /// </summary>
+        /// <param name="services"></param>
+        /// <param name="apiInfo"></param>
+        /// <returns></returns>
         public static IServiceCollection AddCustomIdentity(
            this IServiceCollection services,
            IApiInfo apiInfo
@@ -38,7 +44,12 @@ namespace NanoFabric.AspNetCore
 
             return services;
         }
-
+        /// <summary>
+        /// 添加Consul
+        /// </summary>
+        /// <param name="services"></param>
+        /// <param name="configuration"></param>
+        /// <returns></returns>
         public static IServiceCollection AddNanoFabricConsul(this IServiceCollection services,IConfiguration configuration)
         {
             services.AddOptions();
@@ -51,12 +62,24 @@ namespace NanoFabric.AspNetCore
             return services;
         }
 
+        /// <summary>
+        /// 添加Consul
+        /// </summary>
+        /// <param name="services"></param>
+        /// <param name="consulRegistryConfiguration"></param>
+        /// <returns></returns>
         public static IServiceCollection AddNanoFabricConsul(this IServiceCollection services, ConsulRegistryHostConfiguration consulRegistryConfiguration)
         {
             services.AddNanoFabric(() => new ConsulRegistryHost(consulRegistryConfiguration));
             return services;
         }      
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="services"></param>
+        /// <param name="registryHostFactory"></param>
+        /// <returns></returns>
         public static IServiceCollection AddNanoFabric(this IServiceCollection services, Func<IRegistryHost> registryHostFactory)
         {
             var registryHost = registryHostFactory();
@@ -107,6 +130,11 @@ namespace NanoFabric.AspNetCore
             return services;
         }
 
+        /// <summary>
+        /// 跨域支持
+        /// </summary>
+        /// <param name="services"></param>
+        /// <returns></returns>
         public static IServiceCollection AddPermissiveCors(
            this IServiceCollection services
        )

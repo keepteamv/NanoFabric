@@ -3,8 +3,12 @@ using System;
 
 namespace NanoFabric.RegistryHost.ConsulRegistry
 {
+    /// <summary>
+    /// 健康检查扩展类
+    /// </summary>
     public static class HealthCheckExtensions
     {
+
         public static bool NeedsStatusCheck(this HealthCheck healthCheck)
         {
             if (healthCheck == null)

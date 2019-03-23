@@ -5,6 +5,9 @@ using System.Text;
 
 namespace NanoFabric.Router.Consul
 {
+    /// <summary>
+    /// Consul 查询服务订阅工厂
+    /// </summary>
     public class ConsulPreparedQueryServiceSubscriberFactory : IConsulPreparedQueryServiceSubscriberFactory
     {
         private readonly IConsulClient _consulClient;

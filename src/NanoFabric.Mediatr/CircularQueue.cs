@@ -15,6 +15,10 @@ namespace NanoFabric.Mediatr
             Limit = limit;
         }
 
+        /// <summary>
+        /// 入队
+        /// </summary>
+        /// <param name="obj"></param>
         public void Enqueue(T obj)
         {
             lock (_lockObject)
@@ -24,6 +28,11 @@ namespace NanoFabric.Mediatr
             }
         }
 
+        /// <summary>
+        /// 队列是否包含某个值
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public bool Contains(T value)
         {
             lock (_lockObject)

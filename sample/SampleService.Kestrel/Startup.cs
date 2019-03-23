@@ -1,11 +1,10 @@
 ﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using NanoFabric.AspNetCore;
-using NanoFabric.AspNetCore.Cors;
 using NanoFabric.Autofac;
 using NanoFabric.Core;
 using NanoFabric.Mediatr;
@@ -13,13 +12,8 @@ using NanoFabric.Mediatr.Autofac;
 using NanoFabric.Router;
 using NanoFabric.Swagger;
 using NLog.Extensions.Logging;
-using Swashbuckle.AspNetCore.Swagger;
 using System;
 using System.Threading;
-using NanoFabric.AspNetCore.Middleware;
-using Microsoft.AspNetCore.HttpOverrides;
-using IdentityServer4.AccessTokenValidation;
-using SkyWalking.AspNetCore;
 
 namespace SampleService.Kestrel
 {
@@ -37,7 +31,7 @@ namespace SampleService.Kestrel
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
-        }        
+        }
 
         /// <summary>
         /// 系统配置
@@ -75,11 +69,9 @@ namespace SampleService.Kestrel
                 options.ForwardedHeaders =
                     ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
             });
-   
-            return services.ConvertToAutofac(
-                MediatrModule.Create(ApiInfo.Instance.ApplicationAssembly)
-                );
-         
+
+            return services.ConvertToAutofac(MediatrModule.Create(ApiInfo.Instance.ApplicationAssembly));
+
         }
 
         /// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -93,7 +85,7 @@ namespace SampleService.Kestrel
             {
                 ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
             });
-            app .UseDeveloperExceptionPage()
+            app.UseDeveloperExceptionPage()
                 .UsePermissiveCors()
                 .UseCustomSwagger(apiInfo)
                 .UseAuthentication()
@@ -101,7 +93,7 @@ namespace SampleService.Kestrel
                 .UseStaticFiles()
                 .UseConsulRegisterService(Configuration);
 
- 
+
         }
     }
 }

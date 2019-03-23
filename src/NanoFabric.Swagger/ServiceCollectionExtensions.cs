@@ -10,6 +10,12 @@ namespace NanoFabric.Swagger
 {
     public static class ServiceCollectionExtensions
     {
+        /// <summary>
+        /// 使用自定义的Swagger
+        /// </summary>
+        /// <param name="services"></param>
+        /// <param name="apiInfo"></param>
+        /// <returns></returns>
         public static IServiceCollection AddCustomSwagger(
             this IServiceCollection services,
             IApiInfo apiInfo
@@ -42,6 +48,12 @@ namespace NanoFabric.Swagger
                 options.OperationFilter<DescriptionOperationFilter>();
             });
 
+        /// <summary>
+        /// 使用自定义的Swagger
+        /// </summary>
+        /// <param name="app"></param>
+        /// <param name="apiInfo"></param>
+        /// <returns></returns>
         public static IApplicationBuilder UseCustomSwagger(
             this IApplicationBuilder app,
             IApiInfo apiInfo

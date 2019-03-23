@@ -4,6 +4,9 @@ using System.Threading.Tasks;
 
 namespace NanoFabric.Core
 {
+    /// <summary>
+    /// 服务注册
+    /// </summary>
     public class ServiceRegistry : IManageServiceInstances, IManageHealthChecks, IResolveServiceInstances
     {
         private readonly IRegistryHost _registryHost;

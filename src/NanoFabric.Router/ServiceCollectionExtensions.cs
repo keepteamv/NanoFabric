@@ -18,6 +18,12 @@ namespace NanoFabric.Router
 {
     public static  class ServiceCollectionExtensions
     {
+        /// <summary>
+        /// 添加Consul 路由
+        /// </summary>
+        /// <param name="services"></param>
+        /// <param name="configuration"></param>
+        /// <returns></returns>
         public static IServiceCollection AddNanoFabricConsulRouter(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddOptions();
@@ -26,6 +32,11 @@ namespace NanoFabric.Router
             return services;
         }
 
+        /// <summary>
+        /// 添加Consul 路由
+        /// </summary>
+        /// <param name="services"></param>
+        /// <returns></returns>
         public static IServiceCollection AddNanoFabricConsulRouter(this IServiceCollection services)
         {
             services.RegisterConsulClient();
@@ -36,7 +47,11 @@ namespace NanoFabric.Router
             services.AddCacheServiceSubscriber();
             return services;
         }
-
+        /// <summary>
+        /// 添加缓存服务订阅
+        /// </summary>
+        /// <param name="services"></param>
+        /// <returns></returns>
         public static IServiceCollection AddCacheServiceSubscriber(this IServiceCollection services)
         {
             if (services == null)
@@ -50,6 +65,11 @@ namespace NanoFabric.Router
             return services;
         }
 
+        /// <summary>
+        /// 注册DNS查找
+        /// </summary>
+        /// <param name="services"></param>
+        /// <returns></returns>
         private  static IServiceCollection RegisterDnsLookup(this IServiceCollection services)
         {
             //implement the dns lookup and register to service container

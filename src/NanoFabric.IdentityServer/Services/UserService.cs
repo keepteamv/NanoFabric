@@ -38,7 +38,7 @@ namespace NanoFabric.IdentityServer.Services
             await UserRepository.AddAsync(entity, password);
         }
 
-        public async Task<User> AutoProvisionUserAsync(string provider, string userId, List<Claim> claims)
+        public Task<User> AutoProvisionUserAsync(string provider, string userId, List<Claim> claims)
         {
             throw new NotImplementedException();
         }
@@ -48,7 +48,7 @@ namespace NanoFabric.IdentityServer.Services
             await UserRepository.DeleteAsync(id);
         }
 
-        public async Task<User> FindByExternalProviderAsync(string provider, string userId)
+        public Task<User> FindByExternalProviderAsync(string provider, string userId)
         {
             throw new NotImplementedException();
         }

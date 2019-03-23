@@ -9,6 +9,13 @@ namespace SampleService.Kestrel
     /// </summary>
     public static class ServiceCollectionExtensions
     {
+        /// <summary>
+        /// 添加应用程序
+        /// </summary>
+        /// <typeparam name="TRequestManager"></typeparam>
+        /// <param name="services"></param>
+        /// <param name="configuration"></param>
+        /// <returns></returns>
         public static IServiceCollection AddApplication<TRequestManager>(
             this IServiceCollection services, IConfiguration configuration
         ) where TRequestManager : class, IRequestManager

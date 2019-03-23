@@ -7,6 +7,9 @@ using System.Text;
 
 namespace NanoFabric.Router.Consul
 {
+    /// <summary>
+    /// Consul 客户端扩展
+    /// </summary>
     public static class ConsulClientExtensions
     {
         private const string VERSION_PREFIX = "version-";
@@ -27,6 +30,11 @@ namespace NanoFabric.Router.Consul
             };
         }
 
+        /// <summary>
+        /// 获取版本
+        /// </summary>
+        /// <param name="strings"></param>
+        /// <returns></returns>
         private  static string GetVersionFromStrings(IEnumerable<string> strings)
         {
             return strings

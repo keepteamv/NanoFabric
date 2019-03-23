@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace NanoFabric.Router.Throttle
 {
+    /// <summary>
+    /// 限制的服务订阅
+    /// </summary>
     public class ThrottleServiceSubscriber : IServiceSubscriber
     {
         private bool _disposed;

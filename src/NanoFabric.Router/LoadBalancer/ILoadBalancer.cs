@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 
 namespace NanoFabric.Router
 {
+
+    /// <summary>
+    /// 负载均衡接口
+    /// </summary>
     public interface ILoadBalancer
     {
         Task<RegistryInformation> Endpoint(CancellationToken ct = default(CancellationToken));

@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace NanoFabric.Router.LoadBalancer
 {
+    /// <summary>
+    /// 随机负载均衡的实现
+    /// </summary>
     public class RandomLoadBalancer : ILoadBalancer
     {
         private readonly Random _random;
